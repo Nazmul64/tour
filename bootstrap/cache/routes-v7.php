@@ -71,7 +71,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::lOzzKK5LctaXwPFh',
+            '_route' => 'generated::mAvSy0czxtl3GV6K',
           ),
           1 => NULL,
           2 => 
@@ -91,7 +91,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::JxDckqXhwksE8LZh',
+            '_route' => 'generated::Bsk5eg46KF2hmroZ',
           ),
           1 => NULL,
           2 => 
@@ -105,7 +105,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/login' => 
+      '/admin/login' => 
       array (
         0 => 
         array (
@@ -125,13 +125,53 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/forgotpassword' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'forgotpassword',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/dashboard' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'dashboard',
+            '_route' => 'admin_dashboard',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/profile' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'profile',
           ),
           1 => NULL,
           2 => 
@@ -265,7 +305,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::lOzzKK5LctaXwPFh' => 
+    'generated::mAvSy0czxtl3GV6K' => 
     array (
       'methods' => 
       array (
@@ -294,7 +334,7 @@ app('router')->setCompiledRoutes(
                         \'exception\' => $exception,
                     ]), status: $exception ? 500 : 200);
                 }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"000000000000032c0000000000000000";}}',
-        'as' => 'generated::lOzzKK5LctaXwPFh',
+        'as' => 'generated::mAvSy0czxtl3GV6K',
       ),
       'fallback' => false,
       'defaults' => 
@@ -310,7 +350,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::JxDckqXhwksE8LZh' => 
+    'generated::Bsk5eg46KF2hmroZ' => 
     array (
       'methods' => 
       array (
@@ -332,7 +372,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::JxDckqXhwksE8LZh',
+        'as' => 'generated::Bsk5eg46KF2hmroZ',
       ),
       'fallback' => false,
       'defaults' => 
@@ -355,7 +395,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'login',
+      'uri' => 'admin/login',
       'action' => 
       array (
         'middleware' => 
@@ -385,7 +425,44 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'dashboard' => 
+    'forgotpassword' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'forgotpassword',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\AdminAuthController@forgotpassword',
+        'controller' => 'App\\Http\\Controllers\\Admin\\AdminAuthController@forgotpassword',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'forgotpassword',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin_dashboard' => 
     array (
       'methods' => 
       array (
@@ -398,7 +475,6 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'admin',
         ),
         'uses' => 'App\\Http\\Controllers\\Admin\\AdminDashboardController@dashboard',
         'controller' => 'App\\Http\\Controllers\\Admin\\AdminDashboardController@dashboard',
@@ -407,7 +483,44 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'dashboard',
+        'as' => 'admin_dashboard',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'profile' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'profile',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\AdminAuthController@profile',
+        'controller' => 'App\\Http\\Controllers\\Admin\\AdminAuthController@profile',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'profile',
       ),
       'fallback' => false,
       'defaults' => 

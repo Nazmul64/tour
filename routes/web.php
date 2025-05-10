@@ -13,8 +13,9 @@ Route::get('/', function () {
 
 
 // ✅ Protected admin routes
-Route::get('login', [AdminAuthController::class, 'login'])->name('admin_login');
-Route::middleware(['admin'])->group(function () {
-    Route::get('dashboard', [AdminDashboardController::class, 'dashboard'])->name('dashboard');
-});
+Route::get('admin/login', [AdminAuthController::class, 'login'])->name('admin_login');
+Route::get('forgotpassword', [AdminAuthController::class, 'forgotpassword'])->name('forgotpassword');
+Route::get('dashboard', [AdminDashboardController::class, 'dashboard'])->name('admin_dashboard');
+Route::get('profile', [AdminAuthController::class, 'profile'])->name('profile');
+
 

@@ -24,7 +24,7 @@
                             </div>
                             <div class="form-group">
                                 <div>
-                                    <a href="forget-password.html">
+                                    <a href="{{ route('forgotpassword') }}">
                                         Forget Password?
                                     </a>
                                 </div>

@@ -2,10 +2,6 @@
 
 @section('main_content')
 
- 
-@include('admin.layout.nav')
-@include('admin.layout.sidebar')
-
 <div class="main-content">
     <section class="section">
         <div class="container container-login">
@@ -16,10 +12,13 @@
                             <h4 class="text-center">Reset Password</h4>
                         </div>
                         <div class="card-body card-body-auth">
-                            <form method="POST" action="">
+                            <form method="POST" action="{{ route('forget_password_submit') }}">
                                 @csrf
                                 <div class="form-group">
                                     <input type="email" class="form-control" name="email" placeholder="Email Address" value="" autofocus>
+                                    @error('email')
+                                         <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary btn-lg w_100_p">
@@ -28,7 +27,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div>
-                                        <a href="login.html">
+                                        <a href="{{ route('admin_login') }}">
                                             Back to login page
                                         </a>
                                     </div>

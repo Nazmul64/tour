@@ -32,7 +32,7 @@
                             </div>
                             <div class="form-group">
                                 <div>
-                                    <a href="{{ route('forgotpassword') }}">
+                                    <a href="{{ route('forget_password') }}">
                                         Forget Password?
                                     </a>
                                 </div>

@@ -71,7 +71,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::EBJiVG5j3BHKwf9a',
+            '_route' => 'generated::H5p0BKgyV1ssuc5f',
           ),
           1 => NULL,
           2 => 
@@ -91,7 +91,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::ZEXECUqkvg8K7mGg',
+            '_route' => 'generated::Qv2qQ8eQiiSeEfyf',
           ),
           1 => NULL,
           2 => 
@@ -161,13 +161,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/forgotpassword' => 
+      '/admin/forget_password' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'forgotpassword',
+            '_route' => 'forget_password',
           ),
           1 => NULL,
           2 => 
@@ -180,10 +180,7 @@ app('router')->setCompiledRoutes(
           5 => false,
           6 => NULL,
         ),
-      ),
-      '/admin/forget_password_submit' => 
-      array (
-        0 => 
+        1 => 
         array (
           0 => 
           array (
@@ -240,12 +237,86 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/admin/profile/change' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin_profile_submit',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
     ),
     2 => 
     array (
+      0 => '{^(?|/admin/reset\\-password/([^/]++)/([^/]++)(?|(*:50)))/?$}sDu',
     ),
     3 => 
     array (
+      50 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'reset_password',
+          ),
+          1 => 
+          array (
+            0 => 'token',
+            1 => 'email',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'reset_password_submit',
+          ),
+          1 => 
+          array (
+            0 => 'token',
+            1 => 'email',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        2 => 
+        array (
+          0 => NULL,
+          1 => NULL,
+          2 => NULL,
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => 0,
+        ),
+      ),
     ),
     4 => NULL,
   ),
@@ -360,7 +431,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::EBJiVG5j3BHKwf9a' => 
+    'generated::H5p0BKgyV1ssuc5f' => 
     array (
       'methods' => 
       array (
@@ -389,7 +460,7 @@ app('router')->setCompiledRoutes(
                         \'exception\' => $exception,
                     ]), status: $exception ? 500 : 200);
                 }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000005250000000000000000";}}',
-        'as' => 'generated::EBJiVG5j3BHKwf9a',
+        'as' => 'generated::H5p0BKgyV1ssuc5f',
       ),
       'fallback' => false,
       'defaults' => 
@@ -405,7 +476,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::ZEXECUqkvg8K7mGg' => 
+    'generated::Qv2qQ8eQiiSeEfyf' => 
     array (
       'methods' => 
       array (
@@ -427,7 +498,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::ZEXECUqkvg8K7mGg',
+        'as' => 'generated::Qv2qQ8eQiiSeEfyf',
       ),
       'fallback' => false,
       'defaults' => 
@@ -553,28 +624,28 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'forgotpassword' => 
+    'forget_password' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/forgotpassword',
+      'uri' => 'admin/forget_password',
       'action' => 
       array (
         'middleware' => 
         array (
           0 => 'web',
         ),
-        'uses' => 'App\\Http\\Controllers\\Admin\\AdminAuthController@forgotpassword',
-        'controller' => 'App\\Http\\Controllers\\Admin\\AdminAuthController@forgotpassword',
+        'uses' => 'App\\Http\\Controllers\\Admin\\AdminAuthController@forget_password',
+        'controller' => 'App\\Http\\Controllers\\Admin\\AdminAuthController@forget_password',
         'namespace' => NULL,
         'prefix' => '/admin',
         'where' => 
         array (
         ),
-        'as' => 'forgotpassword',
+        'as' => 'forget_password',
       ),
       'fallback' => false,
       'defaults' => 
@@ -596,7 +667,7 @@ app('router')->setCompiledRoutes(
       array (
         0 => 'POST',
       ),
-      'uri' => 'admin/forget_password_submit',
+      'uri' => 'admin/forget_password',
       'action' => 
       array (
         'middleware' => 
@@ -611,6 +682,79 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'forget_password_submit',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'reset_password' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/reset-password/{token}/{email}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\AdminAuthController@reset_password',
+        'controller' => 'App\\Http\\Controllers\\Admin\\AdminAuthController@reset_password',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'reset_password',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'reset_password_submit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/reset-password/{token}/{email}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\AdminAuthController@reset_password_submit',
+        'controller' => 'App\\Http\\Controllers\\Admin\\AdminAuthController@reset_password_submit',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'reset_password_submit',
       ),
       'fallback' => false,
       'defaults' => 
@@ -687,6 +831,43 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'profile',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin_profile_submit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/profile/change',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\AdminDashboardController@profilechange',
+        'controller' => 'App\\Http\\Controllers\\Admin\\AdminDashboardController@profilechange',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin_profile_submit',
       ),
       'fallback' => false,
       'defaults' => 

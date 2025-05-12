@@ -466,18 +466,18 @@
   ),
   'mail' => 
   array (
-    'default' => 'log',
+    'default' => 'smtp',
     'mailers' => 
     array (
       'smtp' => 
       array (
         'transport' => 'smtp',
         'url' => NULL,
-        'host' => '127.0.0.1',
+        'host' => 'sandbox.smtp.mailtrap.io',
         'port' => '2525',
-        'encryption' => NULL,
-        'username' => NULL,
-        'password' => NULL,
+        'encryption' => 'tls',
+        'username' => 'e9b6e8feac644c',
+        'password' => 'b0cd9ebaf90fb7',
         'timeout' => NULL,
         'local_domain' => NULL,
       ),

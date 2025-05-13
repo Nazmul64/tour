@@ -3,10 +3,11 @@
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Front\FrontController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+  Route::get('/', [FrontController::class, 'home'])->name('home');
+
+
 
 // Public admin routes (no middleware)
 Route::prefix('admin')->group(function () {
@@ -20,9 +21,10 @@ Route::prefix('admin')->group(function () {
 
 });
 
-Route::middleware('admin')->prefix('admin')->group(function () {    
+Route::middleware('admin')->prefix('admin')->group(function () {
     Route::get('/dashboard',[AdminDashboardController::class,'dashboard'])->name('admin_dashboard');
     Route::get('/profile',[AdminDashboardController::class,'profile'])->name('profile');
     Route::post('/profile/change',[AdminDashboardController::class,'profilechange'])->name('admin_profile_submit');
 });
 
+ Route::get('about', [FrontController::class, 'about'])->name('about');

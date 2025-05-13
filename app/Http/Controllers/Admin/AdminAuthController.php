@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\User; 
+use App\Models\User;
 use App\Mail\Websitemail;
 use App\Models\Admin;
 use Illuminate\Http\Request;
@@ -25,7 +25,7 @@ class AdminAuthController extends Controller
         return view('admin.forgotpassword');
     }
 
-    
+
     public function reset_password($token,$email){
         $admin = Admin::where('email',$email)->where('token',$token)->first();
         if(!$admin) {

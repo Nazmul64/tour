@@ -139,10 +139,10 @@
         </tr>
         <tr>
             <td class="email-body">
-                <p>Hello Admin,</p>
+                <p>Hello </p>
                 <p>{!! $body !!}</p>
                 <p>Click the button below to reset your password:</p>
-               
+
             </td>
         </tr>
         <tr>

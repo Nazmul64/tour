@@ -71,7 +71,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::YyO8uYY6zpDsiGSB',
+            '_route' => 'generated::sl3n8TnGBIr8tXnK',
           ),
           1 => NULL,
           2 => 
@@ -430,6 +430,45 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/user/userprofile' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'userprofile',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/user/profile-submit' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'profile_submit',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
     ),
     2 => 
     array (
@@ -676,7 +715,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::YyO8uYY6zpDsiGSB' => 
+    'generated::sl3n8TnGBIr8tXnK' => 
     array (
       'methods' => 
       array (
@@ -705,7 +744,7 @@ app('router')->setCompiledRoutes(
                         \'exception\' => $exception,
                     ]), status: $exception ? 500 : 200);
                 }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000005250000000000000000";}}',
-        'as' => 'generated::YyO8uYY6zpDsiGSB',
+        'as' => 'generated::sl3n8TnGBIr8tXnK',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1553,6 +1592,81 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'user_dashboard',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'userprofile' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'user/userprofile',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\User\\UserDashboard@userprofile',
+        'controller' => 'App\\Http\\Controllers\\User\\UserDashboard@userprofile',
+        'namespace' => NULL,
+        'prefix' => '/user',
+        'where' => 
+        array (
+        ),
+        'as' => 'userprofile',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'profile_submit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'user/profile-submit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\User\\UserDashboard@profilesubmit',
+        'controller' => 'App\\Http\\Controllers\\User\\UserDashboard@profilesubmit',
+        'namespace' => NULL,
+        'prefix' => '/user',
+        'where' => 
+        array (
+        ),
+        'as' => 'profile_submit',
       ),
       'fallback' => false,
       'defaults' => 

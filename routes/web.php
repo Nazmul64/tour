@@ -68,4 +68,6 @@ Route::middleware('admin')->prefix('admin')->group(function () {
  // User
 Route::middleware('auth')->prefix('user')->group(function () {
     Route::get('/userdashboard',[UserDashboard::class,'dashboard'])->name('user_dashboard');
+    Route::get('/userprofile', [UserDashboard::class, 'userprofile'])->name('userprofile');
+    Route::post('/profile-submit', [UserDashboard::class, 'profilesubmit'])->name('profile_submit');
 });
